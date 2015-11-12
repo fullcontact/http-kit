@@ -6,7 +6,7 @@ See **[http-kit.org](http://http-kit.org)** for documentation, examples, benchma
 
 Current [semantic](http://semver.org/) version:
 
-[![Clojars Project](http://clojars.org/http-kit/latest-version.svg)](http://clojars.org/http-kit)
+[![Clojars Project](http://clojars.org/fullcontact/http-kit/latest-version.svg)](http://clojars.org/fullcontact/http-kit)
 
 ### Hack locally
 
