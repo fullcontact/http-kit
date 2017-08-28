@@ -1,4 +1,4 @@
-(defproject fullcontact/http-kit "2.2.1-SNAPSHOT"
+(defproject fullcontact/http-kit "2.2.1"
   :author "Feng Shen (@shenfeng)"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :url "http://http-kit.org/"
@@ -22,7 +22,15 @@
    "-Xms1g" "-Xmx1g"] ; Testing https require more memory
 
   :javac-options ["-source" "1.6" "-target" "1.6" "-g"]
+  :deploy-repositories [["releases" {:url "https://clojars.org/repo/" :creds :gpg}]]
   :java-source-paths ["src/java"]
+  :release-tasks [["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag" "--no-sign"]
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]]
   :test-paths ["test"]
   :jar-exclusions [#"^java.*"] ; exclude the java directory in source path
   :test-selectors
