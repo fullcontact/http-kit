@@ -1,4 +1,4 @@
-(defproject fullcontact/http-kit "2.2.1"
+(defproject fullcontact/http-kit "2.2.2-SNAPSHOT"
   :author "Feng Shen (@shenfeng)"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :url "http://http-kit.org/"
