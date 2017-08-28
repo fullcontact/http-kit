@@ -1,4 +1,4 @@
-(defproject fullcontact/http-kit "2.1.20"
+(defproject fullcontact/http-kit "2.1.21-SNAPSHOT"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :dependencies [[org.clojure/clojure "1.4.0"]]
   :warn-on-reflection true
