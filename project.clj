@@ -1,4 +1,4 @@
-(defproject fullcontact/http-kit "2.1.21-SNAPSHOT"
+(defproject fullcontact/http-kit "2.1.21"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :dependencies [[org.clojure/clojure "1.4.0"]]
   :warn-on-reflection true
@@ -16,6 +16,14 @@
             :url "http://www.apache.org/licenses/LICENSE-2.0.html"}
   :jvm-opts ["-Dclojure.compiler.disable-locals-clearing=true"
              "-Xms1g" "-Xmx1g"]         ; test https require more memory
+  :deploy-repositories [["releases" {:url "https://clojars.org/repo/" :creds :gpg}]]
+  :release-tasks [["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag" "--no-sign"]
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]]
   :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}
              :test {:java-source-paths ["test/java" "src/java"]}
              :dev {:dependencies [[junit/junit "4.8.2"]
